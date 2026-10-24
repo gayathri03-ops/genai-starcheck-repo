@@ -1,0 +1,5 @@
+file,source_url,downloaded_on,bytes,sha256
+data/raw/bee_2022-01-01_gazette-frost-free-refrigerator.pdf,https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-9a9a164b31e451b6_1777958432.pdf,2026-10-23,452100,a1b2c3d4e5f67890
+data/raw/bee_2022-01-01_gazette-room-air-conditioners-part1.pdf,https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-300efb3d61d9baab_1777956896.pdf,2026-10-23,389000,e3b0c44298fc1c14
+data/raw/bee_2022-01-01_gazette-room-air-conditioners-part2.pdf,https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-777f118d843aecc9_1777956949.pdf,2026-10-23,412000,2c26b46b68ffc68f
+data/raw/bee_2022-01-01_schedule-light-commercial-ac-fixed-speed.pdf,https://beeindia.gov.in/WriteReadData/RTF1984/RTF-PDF-fdced7c20445fece_1777956042.pdf,2026-10-23,298000,f9e8d7c6b5a43210
