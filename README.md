@@ -136,6 +136,15 @@ You can also open the interactive API documentation at:
 
 `http://127.0.0.1:8000/docs`
 
+## 8. Run with Docker
+
+```bash
+cp .env.example .env
+docker compose up --build
+curl localhost:8000/ready
+```
+
+
 ## Project structure
 
 ```text

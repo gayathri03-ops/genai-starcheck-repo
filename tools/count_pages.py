@@ -1,12 +1,13 @@
 """Count what you collected: python tools/count_pages.py
 PDFs: real page count. HTML: 1 page each. Code: number of source files."""
 import os
+
 from pypdf import PdfReader
 
 CODE = (".py", ".java", ".go", ".c", ".h", ".js", ".ts", ".scala", ".rs", ".kt", ".yaml", ".yml")
 pdf_pages = html = code = broken = 0
 
-for folder, dirs, files in os.walk("data/raw"):
+for folder, _dirs, files in os.walk("data/raw"):
     for f in files:
         p = os.path.join(folder, f)
         low = f.lower()
