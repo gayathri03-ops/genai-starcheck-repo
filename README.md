@@ -70,6 +70,9 @@ See [`DATASET.md`](DATASET.md) for dataset details.
 - **AI/LLM integration:** To be specified based on the implemented model
 - **Document processing and retrieval:** To be specified based on the implemented components
 
+![CI](https://github.com/gayathri03-ops/genai-starcheck-repo/actions/workflows/ci.yml/badge.svg)
+
+https://genai-starcheck-repo.onrender.com/health
 ## Run it locally
 
 ### 1. Prerequisites
