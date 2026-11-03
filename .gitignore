@@ -8,3 +8,6 @@ logs/
 data/raw/
 *.sqlite
 .DS_Store
+.env
+.env.*
+!.env.example
