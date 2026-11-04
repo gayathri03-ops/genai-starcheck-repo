@@ -166,7 +166,12 @@ import requests
 
 RAW = "data/raw"
 MANIFEST = "data/manifest.csv"
-HEADERS = {"User-Agent": "ExamateStudentProject/1.0 (learning project; contact: gayathriramesh.0306@gmail.com)"}
+HEADERS = {
+    "User-Agent": (
+        "ExamateStudentProject/1.0 "
+        "(learning project; contact: gayathriramesh.0306@gmail.com)"
+    )
+}
 DELAY = 2 # seconds between requests: be polite to government servers
 robots = {}
 

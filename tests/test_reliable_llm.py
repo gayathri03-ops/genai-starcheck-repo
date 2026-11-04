@@ -1,9 +1,9 @@
 import pytest
-
 from app.llm.errors import LLMConfigurationError, LLMUnavailable
-from app.llm.fake import FakeProvider
 from app.llm.reliable import ReliableLLM
 from app.llm.types import LLMRequest, Message, ProviderError, TextChunk
+
+from app.llm.fake import FakeProvider
 
 REQUEST = LLMRequest(
     messages=(Message(role="user", content="Say hello"),),
