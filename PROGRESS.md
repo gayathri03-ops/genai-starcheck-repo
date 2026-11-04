@@ -18,7 +18,7 @@ Commit after every class. Tag every Friday: `git tag week-N && git push origin w
 - [ ] CI green, live link in README
 - [ ] Tag week-2 pushed
    “Deployed on Render (free plan, Docker). Docker not run locally.”
-   
+
 
 ## Week 3 (tag week-3 by Fri 6 Nov)
 - [ ] Parser keeps page numbers and headings

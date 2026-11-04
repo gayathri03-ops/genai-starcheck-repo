@@ -41,9 +41,7 @@ def ready(settings: SettingsDep):
             conn.execute("SELECT 1")
         return {"status": "ready", "database": "ok"}
     except Exception as exc:  # noqa: BLE001  (report, don't crash)
-        return JSONResponse(
-            status_code=503, content={"status": "not ready", "database": str(exc)[:200]}
-        )
+        return JSONResponse(status_code=503, content={"status": "not ready", "database": str(exc)[:200]})
 
 
 def sse(data: dict, event: str | None = None) -> str:

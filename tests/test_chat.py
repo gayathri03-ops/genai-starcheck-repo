@@ -2,9 +2,7 @@ import json
 
 
 def test_chat_streams_and_logs(client):
-    r = client.post(
-        "/chat", json={"messages": [{"role": "user", "content": "What is a star label?"}]}
-    )
+    r = client.post("/chat", json={"messages": [{"role": "user", "content": "What is a star label?"}]})
     assert r.status_code == 200
     assert r.headers["content-type"].startswith("text/event-stream")
     assert 'data: {"delta": "You "}' in r.text

@@ -1,4 +1,5 @@
 """Cost logging: one JSON line per LLM call."""
+
 import json
 import time
 from pathlib import Path
@@ -7,9 +8,7 @@ from app.schemas import Usage
 
 
 def cost_usd(usage: Usage, price_in_per_m: float, price_out_per_m: float) -> float:
-    return (
-        usage.input_tokens * price_in_per_m + usage.output_tokens * price_out_per_m
-    ) / 1_000_000
+    return (usage.input_tokens * price_in_per_m + usage.output_tokens * price_out_per_m) / 1_000_000
 
 
 def log_call(

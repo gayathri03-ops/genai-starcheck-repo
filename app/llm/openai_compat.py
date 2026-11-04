@@ -4,6 +4,7 @@ Reliability: per-call timeout, retries with exponential backoff and full jitter 
 timeouts, connection errors, HTTP 429 and HTTP 5xx. Client errors (400, 401, 403, 404)
 are not retried because retrying cannot fix them.
 """
+
 import asyncio
 import json
 import random
@@ -87,7 +88,7 @@ class OpenAICompatProvider:
                         async for line in response.aiter_lines():
                             if not line.startswith("data:"):
                                 continue
-                            data = line[len("data:"):].strip()
+                            data = line[len("data:") :].strip()
                             if data == "[DONE]":
                                 break
                             chunk = json.loads(data)
@@ -103,10 +104,7 @@ class OpenAICompatProvider:
                                     produced_any = True
                                     text_parts.append(piece)
                                     yield piece
-                        if (
-                            result.usage.input_tokens == 0
-                            and result.usage.output_tokens == 0
-                        ):
+                        if result.usage.input_tokens == 0 and result.usage.output_tokens == 0:
                             result.usage = Usage(
                                 input_tokens=sum(estimate_tokens(m.content) for m in messages),
                                 output_tokens=estimate_tokens("".join(text_parts)),
@@ -128,6 +126,4 @@ class OpenAICompatProvider:
                 if attempt < self.max_retries:
                     await asyncio.sleep(backoff_delay(attempt, self.backoff_base))
         # LLMUnavailable (a kind of LLMError) so the fallback knows it may step in.
-        raise LLMUnavailable(
-            f"LLM call failed after {self.max_retries + 1} attempts: {last_error}"
-        )
+        raise LLMUnavailable(f"LLM call failed after {self.max_retries + 1} attempts: {last_error}")

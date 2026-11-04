@@ -1,4 +1,5 @@
 """Fallback model and GET /usage."""
+
 import asyncio
 import json
 
@@ -38,9 +39,7 @@ def test_fallback_answers_when_main_times_out():
     def handler(request):
         raise httpx.ReadTimeout("slow", request=request)
 
-    text, result = collect(
-        FallbackProvider(slow_main(handler), FakeProvider(model="backup-model"))
-    )
+    text, result = collect(FallbackProvider(slow_main(handler), FakeProvider(model="backup-model")))
     assert text.startswith("You asked: hello")
     assert result.fallback_used is True and result.model == "backup-model"
 
@@ -54,9 +53,7 @@ def test_no_fallback_on_bad_key():
 
 
 def test_main_answers_without_fallback():
-    _, result = collect(
-        FallbackProvider(FakeProvider(model="main-model"), FakeProvider(model="backup"))
-    )
+    _, result = collect(FallbackProvider(FakeProvider(model="main-model"), FakeProvider(model="backup")))
     assert result.fallback_used is False and result.model == "main-model"
 
 
